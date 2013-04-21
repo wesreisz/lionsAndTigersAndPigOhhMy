@@ -5,7 +5,15 @@
 		<value>file:///</value>
 	</property>
 	<property>
-		<name>mapred.job.tracker</name>
+		<name>mapreduce.framework.name</name>
+		<value>local</value>
+	</property>
+	<property>
+		<name>yarn.resourcemanager.address</name>
+		<value>local</value>
+	</property>
+	<property>
+		<name>mapreduce.jobtracker.address</name>
 		<value>local</value>
 	</property>
 </configuration>
