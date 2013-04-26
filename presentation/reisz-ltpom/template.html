@@ -1,0 +1,986 @@
+<!--
+Google IO 2012 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lions and Tigers and Pig Ohh My</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+  <script data-main="js/slides" src="js/video.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/cpl13_logo.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="thank-you-slide dark nobackground">
+    <article class="flexbox vleft auto-fadein">
+	  <p>Wesley Reisz</p><br /><br />
+  	  <b>CodePaLOUsa Talks:</b>
+	  <ul>
+			<li>2012: Kick Ass HTML5 (<a href="http://reisz-kickass.appspot.com">http://reisz-kickass.appspot.com/</a>)</li>
+			<li>2011: Deep Dive into HTML5 and CSS3 (CodePaLOUsa Talks: Deep Dive into HTML5 (<a href="http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3">http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3</a>)</li>
+			<li>2011: Introduction to Liferay</li>
+	  </ul>
+		<p class="auto-fadein" data-config-contact>
+	      <!-- populated from slide_config.json -->
+	    </p>
+    </article>
+    
+  </slide>
+
+  <slide>
+    <article>
+     	<span class="build">
+	     	<img id="li-image5" src="/images/img5.png">
+	 		<img id="li-image2" src="/images/img2.png">
+	 		<img id="li-image4" src="/images/img4.png">
+			<img id="li-image1" src="/images/img1.png">
+			<img id="li-image3" src="/images/img3.png">
+			<img id="li-image6" src="/images/img6.png">
+	    </span>
+    </article>
+  </slide>
+
+
+  <slide class="fill nobackground" style="background-image: url(images/judy-garland-confused.jpg)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">"What's the Big Deal?"</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Definition</h2>
+    </hgroup>
+    <article>
+      <div style="position: absolute; top: 20px; right:60px;text-align:right;width:60%">
+		<span class="italics">“Big data” is high-volume, -velocity and -variety information assets that demand cost-effective, innovative forms of information processing for enhanced insight and decision making."</span>
+	    <span id="bigDataDef" class="small source black">Source: Gartner, Inc. Hype Cycle for Emerging Technologies, 2012 H. LeHong, J. Fenn July 31, 2012.</span>
+	  </div>
+	 
+	  <ul class="build" style="padding-top:100px">
+		<li>Volume</li>
+		<li>Velocity</li>
+		<li>Variety</li>
+		<li>Value</li>	
+		<img id="arrow" src="images/arrow-vector-sml.png">
+		<img id="vs" src="images/BigData-4Vs.png">
+	  </ul>	
+    </article>
+    <aside class="note">
+      <section style="font-size: 12pt !important">
+        <ul>
+          <li>Video (Enterprise CIO Magazine) where editorial director Bill Lareris talked about a description of Big Data.</li>
+		  <li>1 Boeing 737 engine generates 20 terabytes of data an hour. Each aircraft has two of those engines. That’s 40 TB of data an hour. </li>
+		  <li>So in a standard 6 hour cross country flight, you are talking 240 TB of new data.Now multiply that with the number of flights for all commercial jetliners daily in the US.</li>
+		  <li>Now you have a Big Data Volume</li>
+      </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground">
+    <article>
+      <iframe data-src="/samples/infographic/index.html"></iframe>
+	  <div style="position: absolute; bottom:20px; left: 50px;"class="source black">http://www.good.is/posts/the-world-of-data-we-re-creating-on-the-internet</div>
+		<aside class="note">
+	      <section>
+	        <ul>
+	          <li>2012 Graphic</li>
+			</ul>
+	      </section>
+	    </aside>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>By Comparison, recent 2013 (various sources):</h2>
+    </hgroup>
+    <article>
+     	<ul class="build">
+			<li>Stats:</li>
+	     	<ul>
+				<li>We upload 72 hrs of Youtube video every minute today, that's up from 20 hrs last year (http://www.youtube.com/yt/press/statistics.html)</li>
+				<li>Twitter just surpassed 400 million tweets per day (http://news.cnet.com/8301-1023_3-57448388-93/twitter-hits-400-million-tweets-per-day-mostly-mobile/)</li>
+				<li>Facebook ingests 500TB daily of new content!</li>
+				<li>Last Cyber Monday, Amazon set a new record of 306 items sold per second (http://www.businessinsider.com/amazon-holiday-facts-2012-12)
+			</ul>
+			<li>“We're Investing $1 Billion In Big Data This Year.” HP Software chief George Kadifa (March 2013)</li>
+	    </ul>
+    </article>
+  </slide>
+ 
+  <slide class="fill nobackground" style="background-image: url(/images/the_wizard_of_oz.jpg)">
+    <hgroup>
+      <h2 class="white" style="text-shadow: 1px 1px 1px #000;">How can we deal with all this data?</h2>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+	<article>
+     	<span> 
+			<img id="hadoop" src="/images/hadoop-elephant.jpeg" width="500" height="375" alt="Hadoop" />
+			<span id="hadoopDef">Apache Hadoop is an open-source software framework that supports data-intensive distributed applications, licensed under the Apache v2 license. It supports the running of applications on large clusters of commodity hardware.</span>
+	    </span>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+       The name my kid gave a stuffed yellow elephant. Short, relatively easy to spell and pronounce, meaningless, and not used elsewhere: those are my naming criteria. Kids are good at generating such. Googol is a kid’s term.
+      </section>
+    </aside>
+  </slide>
+
+<slide>
+	<hgroup>
+      <h2>Agenda</h2>
+    </hgroup>
+    <article>
+     	<ul class="build">
+			<li>Setup the Problem Space</li>
+			<li>Define HADOOP and it's core Technologies</li>
+			<li>Demo/Discuss Wordcount</li>
+			<li>Demonstrate Building a Hadoop Cluster on a Public Cloud Provider</li>
+			<li>Demo/Discuss MaxTemperature in Java</li>
+			<li>Demo/Discuss MaxTemperature in Pig Latin</li>
+			<li>Demo/Discuss MaxTemperature in Hive</li>
+			<li>Wrapup</li>
+	    </ul>
+    </article>
+  </slide>
+
+
+  <slide>
+	<hgroup>
+      <h2>What is Hadoop? Mike Olson, Cloudera CEO</h2>
+    </hgroup>
+	<article>
+     	<iframe id="ytplayer" type="text/html" width="640" height="390"
+		  src="http://www.youtube.com/embed/qNP4_ICDeqE?start=10"
+		  frameborder="0"></iframe>
+		<footer class="source" style="position:absolute; bottom:10px">Silicon Angle. (Jan 28, 2011) “What is Hadoop? Hadoop 101 with Mike Olsen” Retrieved from http://www.youtube.com/watch?v=qNP4_ICDeqE</footer>
+    </article>
+  </slide>
+
+
+  <slide>
+	<hgroup>
+      <h2>What is Hadoop Composed of?</h2>
+    </hgroup>
+	<article class="smaller build">
+			<span><b>HDFS:</b> HDFS is a distributed, scalable, and portable file system written in Java for the Hadoop framework. Each node in a Hadoop instance typically has a single namenode; a cluster of datanodes form the HDFS cluster. The situation is typical because each node does not require a datanode to be present. Each datanode serves up blocks of data over the network using a block protocol specific to HDFS. The file system uses the TCP/IP layer for communication. </span><br /><br />
+			<span><b>MapReduce: </b> is a programming model for processing large data sets, and the name of an implementation of the model by Google. MapReduce is typically used to do distributed computing on clusters of computers.<br /><br />
+			Writing a parallel-executable program has proven over the years to be a very challenging task. MapReduce simples the process by requiring coders to write only the simpler Map() and Reduce() functions, which focus on the logic of the specific problem at hand, while the "MapReduce System" handles the marshalling of the distributed servers, running the various tasks in parallel, managing all communications and data transfers between the various parts of the system, providing for redundancy and failures, and overall management of the whole process.<br /><br />
+			</span>
+    </article>
+ 	<aside class="note">
+      <section style="font-size: 12pt !important">
+       MapReduce: The model is inspired by the map and reduce functions commonly used in functional programming, although their purpose in the MapReduce framework is not the same as their original forms
+      </section>
+    </aside>
+  </slide>
+
+ <slide class="fill nobackground" style="background-image: url(/images/hdfsarchitecture.png)">
+    <hgroup>
+      <h2 class="black italics" style="text-shadow: 1px 1px 1px #000;">"HDFS Architecture"</h2>
+    </hgroup>
+  </slide>
+
+
+  <slide>
+	<hgroup>
+      <h2>HDFS Features</h2>
+    </hgroup>
+	<article class="smaller build">
+		<ul>
+			<li>Designed to store large files</li> 
+			<li>Fault tolerant and self-healing distributed file system</li>
+			<li>Stores files as large blocks (64 to 128 MB) </li>
+			<li>Each block stored on multiple servers </li>
+			<li>Data is automatically re-replicated on need </li>
+			<li>Accessed from command line, Java API, C API, and more...</li>
+		</ul>
+    </article>
+  </slide>
+
+ <slide class="fill nobackground" style="background-image: url(images/demo.png)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
+    </hgroup>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	     Interacting with the hadoop file system
+         1017  hadoop fs -ls /home/reiszwt <br />
+		 1018  hadoop fs -ls /home/reiszwt/ncdc<br />
+		 1019  hadoop fs -mkdir /home/reiszwt/sample<br />
+		 1020  hadoop fs -ls /home/reiszwt/sample<br />
+		 1021  hadoop fs -ls /home/reiszwt<br />
+		 1022  echo "Hello Cloudera VM" > testFile.txt<br />
+		 1023  ls -lrta<br />
+		 1028  hadoop fs -ls /home/reiszwt/<br />
+		 1030  hadoop fs -put testFile.txt /home/reiszwt/sample<br />
+		 1031  hadoop fs -ls testFile.txt /home/reiszwt/sample/<br />
+		 1033  hadoop fs -get /home/reiszwt/sample/testFile.txt /tmp<br />
+		 1034  ls -ltra /tmp<br />
+		       hadoop fs -conf=conf/hadoop-cluster.xml -ls /home/<br />
+      </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>What is MapReduce</h2>
+    </hgroup>
+	<article class="smaller">
+		<p><b>MapReduce: </b> is a programming model for processing large data sets, and the name of an implementation of the model by Google. MapReduce is typically used to do distributed computing on clusters of computers.</p>
+		<p>Writing a parallel-executable program has proven over the years to be a very challenging task. MapReduce simples the process by requiring coders to write only the simpler Map() and Reduce() functions, which focus on the logic of the specific problem at hand, while the "MapReduce System" handles the marshalling of the distributed servers, running the various tasks in parallel, managing all communications and data transfers between the various parts of the system, providing for redundancy and failures, and overall management of the whole process.</p>
+		<p>
+		Not new concept:
+		<ul>
+			<li>Mapper: cat #somefile | sed -e 's/ /\n/g' > #createdfile</li>
+			<li>Reducer: cat #createdfile | uniq -c | awk '{print $2 "\t" $1}'</li>
+		</ul>
+		</p>	
+		</span>
+    </article>
+  </slide>
+
+
+  <slide class="fill nobackground" style="background-image: url(/images/Mapreduce_Overview.png)">
+    <hgroup>
+      <h2 class="black" style="text-shadow: 1px 1px 1px #000;">Mapreduce Overview</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Map Reduce Features</h2>
+    </hgroup>
+	<article class="smaller">
+   		<ul>
+			<li>Fine grained Map and Reduce tasks</li> 
+			<ul>
+				<li>Improved load balancing</li> 
+				<li>Faster recovery from failed tasks </li> 
+			</ul>
+			<li>Automatic re-execution on failure </li> 
+			<ul>
+				<li>In a large cluster, some nodes are always slow or flaky </li> 
+				<li>Introduces long tails or failures in computation </li> 
+				<li>Framework re-executes failed tasks</li> 
+			</ul>
+			<li>Locality optimizations </li> 
+			<ul>
+				<li>With big data, bandwidth to data is a problem </li> 
+				<li>Map-Reduce + HDFS is a very effective solution </li> 
+				<li>Map-Reduce queries HDFS for locations of input data </li> 
+				<li>Map tasks are scheduled local to the inputs when possible</li> 
+			</ul>	
+		</ul>
+		<footer class="source" style="position:absolute; bottom:10px">http://www.cs.wright.edu/~tkprasad/courses/cs707/ProgrammingHadoop.pdf</footer>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/demo.png)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
+    </hgroup>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	     1149  sudo find / -name "hadoop-examples*jar"<br />
+		 1150  export HADOOP_CLASSPATH=/usr/lib/hadoop-0.20-mapreduce/<br />
+		 1151  echo $HADOOP_CLASSPATH<br />
+		 1152  hadoop jar hadoop-examples.jar pi 2 100<br />
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Putting it All Together With Hadoop's Version of Hello World'</h2>
+    </hgroup>
+	<article >
+   		“45% of all Hadoop tutorials count words. 25% count 
+		sentences. 20% are about paragraphs. 10% are log 
+		parsers. The remainder are helpful.” <br />
+		-jandersen @http://twitter.com/jandersen/ <br /> <br />
+		<ul>
+			<li>Copy Some data into the HDFS</li>
+			<li>Execute the code</li>
+			<li>Retrieve the results</li>
+		</ul>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	   	  mvn clean install <br />
+			target/ <br />
+			hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.WordCount /home/reiszwt/samples/bible/bible+shakes.nopunc /home/reiszwt/samples/bible/output <br />
+			hadoop fs -cat /home/reiszwt/samples/bible/output/part-0* <br />
+	
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>WordCount::Map Function</h2>
+    </hgroup>
+	    <article class="smaller">
+	      <pre class="prettyprint" data-lang="java">
+  public static class Map extends MapReduceBase 
+   	implements Mapper<LongWritable, Text, Text, IntWritable> {
+     private final static IntWritable one = new IntWritable(1);
+     private Text word = new Text();
+
+     public void map(LongWritable key, Text value, 
+   		  OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
+       String line = value.toString();
+       StringTokenizer tokenizer = new StringTokenizer(line);
+       while (tokenizer.hasMoreTokens()) {
+         word.set(tokenizer.nextToken());
+         output.collect(word, one);
+       }
+     }
+   }		
+		  </pre>
+	    </article>
+	    <article>
+			<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+		</article>	
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>WordCount::Reduce Function</h2>
+    </hgroup>
+	    <article class="smaller">
+	      <pre class="prettyprint" data-lang="java">
+    public static class Reduce extends MapReduceBase 
+    	implements Reducer<Text, IntWritable, Text, IntWritable> {
+      public void reduce(Text key, Iterator<IntWritable> values, 
+    		  OutputCollector<Text, IntWritable> output, Reporter reporter) throws IOException {
+        int sum = 0;
+        while (values.hasNext()) {
+          sum += values.next().get();
+        }
+        output.collect(key, new IntWritable(sum));
+      }
+    }		
+		  </pre>
+	    </article>	
+    </article>
+    <article>
+		<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>WordCount::Driver</h2>
+    </hgroup>
+	    <article class="smaller">
+	      <pre class="prettyprint" data-lang="java">
+    public static void main(String[] args) throws Exception {
+       JobConf conf = new JobConf(WordCount.class);
+       conf.setJobName("wordcount");
+
+       conf.setOutputKeyClass(Text.class);
+       conf.setOutputValueClass(IntWritable.class);
+
+       conf.setMapperClass(Map.class);
+       conf.setCombinerClass(Reduce.class);
+       conf.setReducerClass(Reduce.class);
+
+       conf.setInputFormat(TextInputFormat.class);
+       conf.setOutputFormat(TextOutputFormat.class);
+
+       FileInputFormat.setInputPaths(conf, new Path(args[0]));
+       FileOutputFormat.setOutputPath(conf, new Path(args[1]));
+
+       JobClient.runJob(conf);
+    }		
+		  </pre>
+	    </article>	
+	
+    </article>
+    <article>
+		<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Compile and Run It</h2>
+    </hgroup>
+	    <article class="smaller">
+	      <pre class="prettyprint" data-lang="xml">		
+  &lt;dependencies&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;
+          &lt;artifactId&gt;hadoop-core&lt;/artifactId&gt;
+          &lt;version&gt;1.1.2&lt;/version&gt;
+      &lt;/dependency&gt;
+   &lt;/dependencies&gt;
+		  </pre>
+		
+		<pre class="prettyprint" data-lang="bash">		
+mvn clean install 
+export target/ 
+hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.WordCount \
+	/home/reiszwt/samples/bible/bible+shakes.nopunc /home/reiszwt/samples/bible/output
+	  </pre>
+	    </article>	
+    </article>
+    <article>
+		<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/demo.png)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
+    </hgroup>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+		mvn clean install <br />
+		export target/ <br />
+		hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.WordCount 
+			/home/reiszwt/samples/bible/bible+shakes.nopunc /home/reiszwt/samples/bible/output<br />
+	  </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/scarecrow.jpg)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">"I have an idea... let's build something!"</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>National Climatic Data Center (NCDC) Weather Station Data</h2>
+    </hgroup>
+	<article >
+   		<p>Purpose: Write a Program to Grab the Highest Temperatures over a large volume of Datasets from NCDC</p>
+		<p>In the process, we will:</p>
+		<ul>
+			<li>Write <b>AND TEST</b> our code</li>
+			<li>Test initially using the local file system</li>
+			<li>Test against localhost</li>
+			<li>Build a remote cluster using Cloud technology (IAAS)</li>
+			<li>Copy data into the remote hdfs cluster and execute it</li>
+		</ul>
+    </article>
+ 	<article>
+		<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+ <slide class="fill nobackground" style="background-image: url(images/demo.png)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
+    </hgroup>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	     show project in eclipse<br />
+	     show maven dependencies<br />
+	     show testcases<br />
+	     build it<br />
+		 debug locally<br />
+	  	 hadoop fs -conf=../conf/hadoop-localhost.xml -ls /home/reiszwt/ncdc/in/
+	     hadoop fs -conf=../conf/hadoop-localhost.xml -rm -r /home/reiszwt/ncdc/out/
+	     hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver -conf=../conf/hadoop-localhost.xml /home/reiszwt/ncdc/in/ /home/reiszwt/ncdc/out/
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Demo Steps</h2>
+    </hgroup>
+	<article>
+   	<pre class="prettyprint" data-lang="bash">	
+show project in eclipse
+show maven dependencies
+show testcases
+build it
+debug locally
+hadoop fs -conf=../conf/hadoop-localhost.xml -ls /home/reiszwt/ncdc/in/
+hadoop fs -conf=../conf/hadoop-localhost.xml -rm -r /home/reiszwt/ncdc/out/
+hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver 
+  -conf=../conf/hadoop-localhost.xml /home/reiszwt/ncdc/in/ 
+  /home/reiszwt/ncdc/out/
+	</pre>
+    </article>
+ <article>
+		<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/hpcloud.png)">
+    <hgroup>
+      <h2 class="black italics" style="text-shadow: 1px 1px 1px #000;">Build a Remote Server with Cloud Technology</h2>
+    </hgroup>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>Create Servers</h2>
+    </hgroup>
+	<article >
+		<img src="/images/step1CreateServers.png">
+    </article>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>SSH into Cloudera Manager Server</h2>
+    </hgroup>
+	<article >
+		<img src="/images/step3GrabInstaller.png">
+    </article>
+  </slide>
+
+<slide>
+	<hgroup>
+      <h2>Install Cloudera Manager</h2>
+    </hgroup>
+	<article>
+		<img src="/images/launchCM.png">
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Install Cloudera Manager</h2>
+    </hgroup>
+	<article>
+		<img src="/images/installingJdk.png">
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Install Cloudera Manager</h2>
+    </hgroup>
+	<article>
+		<img src="/images/point.png">
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Install Cloudera Manager</h2>
+    </hgroup>
+	<article>
+		<img src="/images/logon.png">
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Install Cloudera Manager</h2>
+    </hgroup>
+	<article>
+		<img src="/images/installFree.png">
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Add Servers To Cluster</h2>
+    </hgroup>
+	<article>
+		<img src="/images/addServers2Cluster.png">
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Add Servers To Cluster</h2>
+    </hgroup>
+	<article>
+		<img src="/images/installed.png">
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Add Servers To Cluster</h2>
+    </hgroup>
+	<article>
+		<img src="/images/validated.png">
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/demo.png)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Great Video on the Install Process for a Cloudera Cluster</h2>
+    </hgroup>
+	<article >
+		<article>
+			<img src="/images/youtubeInstallClouderaManager.png"><br />
+			<a style="color: #999;" href="http://www.youtube.com/watch?v=CobVqNMiqww">http://www.youtube.com/watch?v=CobVqNMiqww</a>
+	    </article>
+    </article>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>Deploy Your Code to the Cloud</h2>
+    </hgroup>
+	<article >
+		<article>
+			<pre class="prettyprint" data-lang="bash">	
+   49  sudo -u hdfs hadoop fs -ls /home/hdfs
+   50  sudo -u hdfs hadoop fs -ls /home/hdfs/ncdc
+   51  export HADOOP_CLASSPATH=/home/hdfs/
+   53  sudo -u hdfs hadoop jar /home/hdfs/hadoop-examples.jar 
+       com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver /home/hdfs/ncdc/in /home/hdfs/ncdc/out
+   56  hadoop fs -ls /home/hdfs/ncdc/out/
+   57  hadoop fs -cat /home/hdfs/ncdc/out/part*				
+			</pre>
+	    </article>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/lion1.jpg)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">"What!? What happened to Pig?"</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Different Ways to Write your code</h2>
+    </hgroup>
+	<article >
+		<ul>
+			<li>Java/C</li>
+			<li>Pig</li>
+			<li>Hive</li>
+		</ul>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Pig's Philosophy</h2>
+    </hgroup>
+	<article class="smaller">
+		<p>
+		<b>What does it mean to be a pig?</b><br />
+		The Apache Pig Project has some founding principles that help pig developers decide how the system should grow over time. This page presents those principles.
+		</p>
+		<p>
+		<b>Pigs Eat Anything</b><br />
+		Pig can operate on data whether it has metadata or not. It can operate on data that is relational, nested, or unstructured. And it can easily be extended to operate on data beyond files, including key/value stores, databases, etc.
+		</p>
+		<p>
+		<b>Pigs Live Anywhere</b><br />
+		Pig is intended to be a language for parallel data processing. It is not tied to one particular parallel framework. It has been implemented first on Hadoop, but we do not intend that to be only on Hadoop.
+		</p>
+		<p>
+		<b>Pigs Are Domestic Animals</b><br />
+		Pig is designed to be easily controlled and modified by its users.
+		</p>
+		<p>
+		<b>Pigs Fly</b><br />
+		Pig processes data quickly. We want to consistently improve performance, and not implement features in ways that weigh pig down so it can't fly.
+		</p>
+		<p>http://pig.apache.org/</p>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Let's Take a Look at Pig</h2>
+    </hgroup>
+	<article >
+		<pre class="prettyprint" data-lang="bash">
+cd /home/cloudera/workspace/lionsAndTigersAndPigOhhMy
+pig
+		</pre>
+		<pre class="prettyprint" data-lang="pig latin">
+records= LOAD '/home/reiszwt/ncdc/sample/sample.txt' AS (year:chararray, temperature:int, quality:int);
+filtered_records =  FILTER records  By temperature !=9999 AND quality==1;
+grouped_recrds = GROUP filtered_records by year;
+max_temp = FOREACH grouped_recrds GENERATE group, MAX(filtered_records.temperature);
+dump max_temp;
+		</pre>
+		<img src="/images/pig_open.png">
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Hive's Approach</h2>
+    </hgroup>
+	<article class="smaller">
+		<p>
+			<b>Apache Hive</b><br />
+			The Apache HiveTM data warehouse software facilitates querying and managing large datasets residing in distributed storage. Built on top of Apache HadoopTM , it provides
+			</p>
+			<p>
+			<b>Tools to enable easy data extract/transform/load (ETL)</b><br />
+			A mechanism to impose structure on a variety of data formats Access to files stored either directly in Apache HDFSTM or in other data storage systems such as Apache HBase
+			</p>
+			<p>
+			<b>Query execution via MapReduce</b><br />
+			Hive defines a simple SQL-like query language, called QL, that enables users familiar with SQL to query the data. At the same time, this language also allows programmers who are familiar with the MapReduce framework to be able to plug in their custom mappers and reducers to perform more sophisticated analysis that may not be supported by the built-in capabilities of the language. QL can also be extended with custom scalar functions (UDF's), aggregations (UDAF's), and table functions (UDTF's).
+		</p>
+		<p>
+			Hive is not designed for OLTP workloads and does not offer real-time queries or row-level updates. It is best used for batch jobs over large sets of append-only data (like web logs). What Hive values most are scalability (scale out with more machines added dynamically to the Hadoop cluster), extensibility (with MapReduce framework and UDF/UDAF/UDTF), fault-tolerance, and loose-coupling with its input formats.
+	</p>
+		<p>https://cwiki.apache.org/confluence/display/Hive/Home</p>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+
+  <slide>
+	<hgroup>
+      <h2>Let's Take a Look at Hive</h2>
+    </hgroup>
+	<article >
+		<pre class="prettyprint" data-lang="bash">
+cd /home/cloudera/workspace/lionsAndTigersAndPigOhhMy
+hive
+		</pre>
+		<pre class="prettyprint" data-lang="hive">
+LOAD DATA LOCAL INPATH 'input/ncdc/micro-tab/sample.txt' OVERWRITE INTO Table records;
+select  year, MAX(temperature) FROM records where temperature != 9999 and quality==1 group by year;
+		</pre>
+		<article style="position:absolute; right: 20px; bottom: 20px;"><img src="/images/hiveSml.png" /></article>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/witch.jpg)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">But wait... we're not quite done now are we?'</h2>
+    </hgroup>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Hadoop is a massive</h2>
+    </hgroup>
+	<article >
+		Hadoop is a massive ecosystem and I only touched on the surface of the coding. Other things, hadoop offers include:<br /><br /><br />
+		
+		<center><img src="/images/ecosystem.jpg"></center>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>There are also SAAS Solutions using Hadoop</h2>
+    </hgroup>
+	<article >
+		<ul>
+			<li>EC2 has both IAAS and SAAS</li>
+			<li>S3 is an HDFS Filesystem</li>
+		</ul>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+
+ <slide>
+	<hgroup>
+      <h2>Summary </h2>
+    </hgroup>
+	<article >
+			<ul>
+				<li>Hadoop Ecosystem is Huge</li>
+				<li>Support multiple ways to get and work with data, depending on your needs and skills</li>
+				<li>Is Open Source!!!</li>
+				<li>Based on Java</li>
+				<li>Microsoft has a limited access program that allows .NET to access an HDFS</li>
+				<li>Multitude of options from local machines to IAAS and SAAS offerings</li>
+			</ul>
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>Shoutouts </h2>
+    </hgroup>
+	<article>
+		<table>
+			<tr>
+				<td width="250px"><img src="/images/hadoopBookSml.png" width="231px" height="300px"></td>
+				<td vertical-align:top;>
+					Hadoop: The Definitive Guide, 3rd Edition<br />
+					Storage and Analysis at Internet Scale<br />
+					By Tom White<br />
+					Publisher: O'Reilly Media / Yahoo Press<br />
+					Released: May 2012<br /><br />
+					*NCDC Samples came directly from this book
+					
+				</td>
+			</tr>
+			<tr>
+				<td width="250px"><img src="/images/clouderaLogo.png" width="184px" height="75px"></td>
+				<td vertical-align:top;>
+					<b><a style="color: #999" href="http://www.cloudera.com/">http://www.cloudera.com</a></b><br />
+					Provided VM I used<br />
+					Provided Installed for the Cloud Deployed Cluster<br />
+					Wonderful help via google Group Forums @ <a href="https://groups.google.com/a/cloudera.org/groups/dir">https://groups.google.com/a/cloudera.org/groups/dir</a><br />
+					Special Shoutout to <b>Sandy Ryza</a> of Cloudera for helping me with an issue I had with the CDH VM! Thank you!!!
+				</td>
+			</tr>
+
+		</table>	
+    </article>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	  </section>
+    </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Final Word on Big Data at UPS. Dave Barnes, UPS CIO</h2>
+    </hgroup>
+	<article>
+     	<iframe width="560" height="315" src="http://www.youtube.com/embed/btRP3B7xd5U?start=282&end=360" frameborder="0" allowfullscreen></iframe>
+		<footer class="source" style="position:absolute; bottom:10px">Silicon Angle. (Jan 28, 2011) “What is Hadoop? Hadoop 101 with Mike Olsen” Retrieved from http://www.youtube.com/watch?v=qNP4_ICDeqE</footer>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Agenda</h2>
+    </hgroup>
+    <article>
+     	<ul class="build">
+			<li>Setup the Problem Space</li>
+			<li>Define HADOOP and it's core Technologies</li>
+			<li>Demo/Discuss Wordcount</li>
+			<li>Demonstrate Building a Hadoop Cluster on a Public Cloud Provider</li>
+			<li>Demo/Discuss MaxTemperature in Java</li>
+			<li>Demo/Discuss MaxTemperature in Pig Latin</li>
+			<li>Demo/Discuss MaxTemperature in Hive</li>
+			<li>Wrapup</li>
+	    </ul>
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/group.jpg)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;"></h2>
+    </hgroup>
+	<article class="build">
+		<img id="pigSml" width="400px" width="380" src="/images/computer_pig_logo-cartoon-pig.png" >
+	</article>
+  </slide>
+
+
+<!-- end of the deck -->
+  <slide class="thank-you-slide dark nobackground">
+    <aside class="gdbar right"><img src="images/cpl13_logo.png"></aside>
+    <article class="flexbox vleft auto-fadein">
+      <h2>Thank You!</h2>
+	  <p>Wesley Reisz</p>
+	  <p class="auto-fadein" data-config-contact>
+       <!-- populated from slide_config.json -->
+      </p>
+    </article>
+    
+  </slide>
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+     	 <span><img src="images/logoWes.png" /></span>
+    </article>
+  </slide>
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-35519039-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
