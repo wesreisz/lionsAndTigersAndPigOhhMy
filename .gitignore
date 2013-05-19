@@ -1,0 +1,17 @@
+#java specific
+*.class
+
+ConfigurationPrinter/target/
+MaxTemperatureMapper/output/
+MaxTemperatureMapper/target/
+WordCount/.classpath
+WordCount/.project
+WordCount/.settings/
+WordCount/target/
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
