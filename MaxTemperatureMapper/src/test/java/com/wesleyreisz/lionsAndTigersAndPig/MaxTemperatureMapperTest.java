@@ -52,8 +52,8 @@ public class MaxTemperatureMapperTest {
 		new ReduceDriver<Text, IntWritable, Text, IntWritable>()
 			.withReducer(new MaxTemperatureReducer())
 			.withInputKey(new Text("1950"))
-			.withInputValues(Arrays.asList(new IntWritable(10), new IntWritable(5))) 
-			.withOutput(new Text("1950"), new IntWritable(10))
+			.withInputValues(Arrays.asList(new IntWritable(10), new IntWritable(5),new IntWritable(20))) 
+			.withOutput(new Text("1950"), new IntWritable(20))
 			.runTest();
 	}
 	
