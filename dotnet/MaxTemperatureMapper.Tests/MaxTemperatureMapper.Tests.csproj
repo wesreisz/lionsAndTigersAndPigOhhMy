@@ -54,7 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\MaxTemperatureMapper\MaxTemperatureMapper.csproj">
+    <ProjectReference Include="..\MaxTemperatureMapper\MaxTemperatureMapper.csproj">
       <Project>{891d9648-81a4-49fc-9e55-cf27b085bc59}</Project>
       <Name>MaxTemperatureMapper</Name>
     </ProjectReference>
