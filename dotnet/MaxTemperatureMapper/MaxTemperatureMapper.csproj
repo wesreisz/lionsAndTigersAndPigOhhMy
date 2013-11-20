@@ -32,6 +32,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Hadoop.MapReduce, Version=0.12.5067.18993, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Hadoop.MapReduce.0.12.5067.18993\lib\net40\Microsoft.Hadoop.MapReduce.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Hadoop.WebClient">
+      <HintPath>..\packages\Microsoft.Hadoop.MapReduce.0.12.5067.18993\lib\net40\Microsoft.Hadoop.WebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.Management.HDInsight.Framework.Experimental">
+      <HintPath>..\packages\Microsoft.Hadoop.MapReduce.0.12.5067.18993\lib\net40\Microsoft.WindowsAzure.Management.HDInsight.Framework.Experimental.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +59,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MRLib\Microsoft.Hadoop.CombineDriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MRLib\Microsoft.Hadoop.MapDriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MRLib\Microsoft.Hadoop.MapReduce.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MRLib\Microsoft.Hadoop.ReduceDriver.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MRLib\Microsoft.WindowsAzure.Management.HDInsight.Framework.Experimental.Threading.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="MRLib\MRRunner.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
