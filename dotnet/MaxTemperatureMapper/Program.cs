@@ -34,14 +34,14 @@ namespace MaxTemperatureMapper
                 context.EmitKeyValue(key, max_value.ToString());
             }
         }
-        public class MaxTemperatureJob : HadoopJob<MaxTemperatureMapper, ReducerCombinerBase> 
+        public class MaxTemperatureJob : HadoopJob<MaxTemperatureMapper> 
         {
             public override HadoopJobConfiguration Configure(ExecutorContext context)
             {
                 HadoopJobConfiguration config = new HadoopJobConfiguration();
 
-                config.InputPath = "Input/maxtemp";
-                config.OutputFolder = "Output/maxtemp";
+                config.InputPath = "Input/ncdc";
+                config.OutputFolder = "Output/ncdc";
                 return config;
             }
         }
