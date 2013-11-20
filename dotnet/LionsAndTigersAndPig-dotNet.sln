@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxTemperatureMapper", "..\MaxTemperatureMapper\MaxTemperatureMapper.csproj", "{891D9648-81A4-49FC-9E55-CF27B085BC59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount", "WordCount\WordCount.csproj", "{84AB811A-ED35-45B8-911C-9EC7B480F05A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxTemperatureMapper.Tests", "..\MaxTemperatureMapper.Tests\MaxTemperatureMapper.Tests.csproj", "{09E56B44-7F4E-4715-8C67-C258812FF7A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareRoot", "SquareRoot\SquareRoot.csproj", "{7FD12159-C112-43CB-AB43-2EC22C54495F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquareRoot", "..\SquareRoot\SquareRoot.csproj", "{7FD12159-C112-43CB-AB43-2EC22C54495F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxTemperatureMapper.Tests", "MaxTemperatureMapper.Tests\MaxTemperatureMapper.Tests.csproj", "{09E56B44-7F4E-4715-8C67-C258812FF7A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCount", "..\WordCount\WordCount.csproj", "{84AB811A-ED35-45B8-911C-9EC7B480F05A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxTemperatureMapper", "MaxTemperatureMapper\MaxTemperatureMapper.csproj", "{891D9648-81A4-49FC-9E55-CF27B085BC59}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,22 +15,22 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84AB811A-ED35-45B8-911C-9EC7B480F05A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84AB811A-ED35-45B8-911C-9EC7B480F05A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84AB811A-ED35-45B8-911C-9EC7B480F05A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84AB811A-ED35-45B8-911C-9EC7B480F05A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD12159-C112-43CB-AB43-2EC22C54495F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09E56B44-7F4E-4715-8C67-C258812FF7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{891D9648-81A4-49FC-9E55-CF27B085BC59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
