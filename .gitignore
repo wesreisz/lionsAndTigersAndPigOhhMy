@@ -1,13 +1,11 @@
 #java specific
 *.class
 
-ConfigurationPrinter/target/
-MaxTemperatureMapper/output/
-MaxTemperatureMapper/target/
-WordCount/.classpath
-WordCount/.project
-WordCount/.settings/
-WordCount/target/
+**/target/
+**/output/
+**/.classpath
+**/.project
+**/.settings/
 
 ## generic files to ignore
 *~
