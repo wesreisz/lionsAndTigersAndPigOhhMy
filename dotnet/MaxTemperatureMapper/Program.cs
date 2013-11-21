@@ -24,17 +24,20 @@ namespace MaxTemperatureMapper
         }
         public class MaxTemperatureReduce : ReducerCombinerBase 
         {
-            public override void Reduce(string key, IEnumerable<string> values, ReducerCombinerContext context)
+            public override void Reduce(string key, IEnumerable<string> temperatures, ReducerCombinerContext context)
             {
                 int max_value = int.MinValue;
-                foreach(String value in values)
+                foreach (String temperature in temperatures)
                 {
-                    max_value = Math.Max(max_value, int.Parse(value));
+                    if (!temperature.Equals(NcdcRecordParser.MISSING_TEMPERATURE))
+                    {
+                        max_value = Math.Max(max_value, int.Parse(temperature));
+                    }
                 }
                 context.EmitKeyValue(key, max_value.ToString());
             }
         }
-        public class MaxTemperatureJob : HadoopJob<MaxTemperatureMapper> 
+        public class MaxTemperatureJob : HadoopJob<MaxTemperatureMapper, MaxTemperatureReduce> 
         {
             public override HadoopJobConfiguration Configure(ExecutorContext context)
             {
