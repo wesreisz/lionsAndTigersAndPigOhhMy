@@ -1,8 +1,8 @@
 #java specific
 *.class
 
-**/target/
-**/output/
+**/target/**
+**/output/**
 **/.classpath
 **/.project
 **/.settings/
