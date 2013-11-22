@@ -9,7 +9,7 @@ namespace MaxTemperatureMapper
 {
     public class NcdcRecordParser
     {
-        public static int MISSING_TEMPERATURE = 99999;
+        public static int MISSING_TEMPERATURE = 9999;
         private String _year;
         private int _airTemperature; 
 	    private String _quality;
@@ -20,8 +20,8 @@ namespace MaxTemperatureMapper
         {
             NcdcRecordParser record = new NcdcRecordParser();
             record._year = input.Substring(15, 4);
-            record._airTemperature = int.Parse(input.Substring(87, 6).Replace("+",""));
-            record._quality = input.Substring(93, 5); 
+            record._airTemperature = int.Parse(input.Substring(87, 6));
+            record._quality = input.Substring(93, 4); 
 		    
             return record;
         }
