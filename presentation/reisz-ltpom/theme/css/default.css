@@ -265,7 +265,7 @@ slides>slide.far-next { display: none }
 slides>slide.dark { background: #515151 !important }
 slides>slide:not(.nobackground):before {
     font-size: 12pt;
-    content: "#mosscon13 @wesreisz";
+    content: "#dogfood13 @wesreisz";
     position: absolute;
     bottom: 20px;
     left: 60px;

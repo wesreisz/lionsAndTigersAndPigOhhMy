@@ -26,9 +26,14 @@ URL: https://code.google.com/p/io-2012-slides
 <body style="opacity: 0">
 
 <slides class="layout-widescreen">
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+     	 <span><img src="images/logoWes.png" /></span>
+    </article>
+  </slide>
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/mossLogo.png" style="height:40px; padding-top:20px;"></aside>
+    <aside class="gdbar"><img src="images/dogFoodLogo.png" ></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -42,14 +47,14 @@ URL: https://code.google.com/p/io-2012-slides
 	  <p>Wesley Reisz</p><br />
   	  <ul>
 			<b>Past:</b>
-			<li>2012: Kick Ass HTML5 (<a href="http://reisz-kickass.appspot.com">http://reisz-kickass.appspot.com/</a>)</li>
-			<li>2011: Deep Dive into HTML5 and CSS3 (<a href="http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3">http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3</a>)</li>
+			<li>Kick Ass HTML5: <a href="http://reisz-kickass.appspot.com">http://reisz-kickass.appspot.com/</a></li>
+			<li>Deep Dive into HTML5 and CSS3: <a href="http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3">http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3</a></li>
+			<li>HTML5 Workshop: <a href="http://reisz-html5.appspot.com/">http://reisz-html5.appspot.com/</a></li>
+			<li>Lions and Tigers and Pig Ohh My... (Java & .NET Editions): <a href="http://reisz-ltpom.appspot.com/">http://reisz-ltpom.appspot.com/</a>
+					(CodePaLOUsa, Stir Trek, MOSSCon, DogFoodCon)</li>
+			<li>Fall 2013 Android Programming (UofL COB)</li>
 			<br />
 			<b>Upcoming:</b>
-			<li>2013: HTML5 Workshop, May 29 5:30pm @ Fort Knox (<a href="http://ftknox.afceachapter.org/youngafcean.html">http://ftknox.afceachapter.org/youngafcean.html</a>) <i>Free</i></li>
-			<li>2013: Lions and Tigers and Pig Ohh My... (<a href="http://reisz-ltpom.appspot.com/">http://reisz-ltpom.appspot.com/</a>)
-				(CodePaLOUsa, Stir Trek, MOSSCon, MADExpo)</li>
-			<li>Fall 2013 Android Programming (UofL COB)</li>
 			<li>Spring 2013 Web Architecture (UofL COB)</li>
 	  </ul>
 		<p class="auto-fadein" style="position: relative; top: -60px" data-config-contact>
@@ -152,7 +157,8 @@ URL: https://code.google.com/p/io-2012-slides
 	<article>
      	<span> 
 			<img id="hadoop" src="/images/hadoop-elephant.jpeg" width="500" height="375" alt="Hadoop" />
-			<span id="hadoopDef">Apache Hadoop is an open-source software framework that supports data-intensive distributed applications, licensed under the Apache v2 license. It supports the running of applications on large clusters of commodity hardware.</span>
+			<span id="hadoopDef">Apache Hadoop is an open-source software framework that supports data-intensive distributed applications, licensed under the Apache v2 license. It supports the running of applications on large clusters of commodity hardware.<br /><br />Windows Azure HDInsight provides ease of management, agility and an open Enterprise-ready Hadoop service in the cloud.
+			</span>
 	    </span>
     </article>
 	<aside class="note">
@@ -171,8 +177,9 @@ URL: https://code.google.com/p/io-2012-slides
 			<li>Setup the Problem Space</li>
 			<li>Define HADOOP and it's core Technologies</li>
 			<li>Demo/Discuss Wordcount</li>
-			<li>Demonstrate Building a Hadoop Cluster on a Public Cloud Provider</li>
-			<li>Demo/Discuss MaxTemperature in Java</li>
+			<li>Demonstrate Running Locally using HDInsight Emulator for Microsoft Azure </li>
+			<li>Demonstrate Setting up a Hadoop Cluster on Windows Azure HDInsight</li>
+			<li>Demo/Discuss MaxTemperature in Java / C#</li>
 			<li>Demo/Discuss MaxTemperature in Pig Latin</li>
 			<li>Demo/Discuss MaxTemperature in Hive</li>
 			<li>Wrapup</li>
@@ -231,7 +238,7 @@ URL: https://code.google.com/p/io-2012-slides
 			<li>Stores files as large blocks (64 to 128 MB) </li>
 			<li>Each block stored on multiple servers </li>
 			<li>Data is automatically re-replicated on need </li>
-			<li>Accessed from command line, Java API, C API, and more...</li>
+			<li>Accessed from command line, Java API, C API, and... C#</li>
 		</ul>
     </article>
   </slide>
@@ -268,11 +275,20 @@ URL: https://code.google.com/p/io-2012-slides
 		<p><b>MapReduce: </b> is a programming model for processing large data sets, and the name of an implementation of the model by Google. MapReduce is typically used to do distributed computing on clusters of computers.</p>
 		<p>Writing a parallel-executable program has proven over the years to be a very challenging task. MapReduce simples the process by requiring coders to write only the simpler Map() and Reduce() functions, which focus on the logic of the specific problem at hand, while the "MapReduce System" handles the marshalling of the distributed servers, running the various tasks in parallel, managing all communications and data transfers between the various parts of the system, providing for redundancy and failures, and overall management of the whole process.</p>
 		<p>
-		Not new concept:
-		<ul>
-			<li>Mapper: cat #somefile | sed -e 's/ /\n/g' > #createdfile</li>
-			<li>Reducer: cat #createdfile | uniq -c | awk '{print $2 "\t" $1}'</li>
-		</ul>
+		Not new concept (Just wasn't in parrallel):
+		<article class="smaller">
+	      <pre class="prettyprint" data-lang="bash">
+     #!/usr/bin/env bash
+     for year in ../input/ncdc/all/*
+     do
+        echo -ne `basename $year .gz`"\t"
+        gunzip -c $year | \
+        awk '{ temp = substr($0, 88, 5) + 0;
+        if (temp !=9999 && q ~ /[01459]/ && temp > max) max = temp }
+        END { print max }'
+     done
+		  </pre>
+	    </article>
 		</p>	
 		</span>
     </article>
@@ -328,7 +344,7 @@ URL: https://code.google.com/p/io-2012-slides
     </aside>
   </slide>
 
-  <slide>
+ <slide>
 	<hgroup>
       <h2>Putting it All Together With Hadoop's Version of Hello World'</h2>
     </hgroup>
@@ -338,20 +354,52 @@ URL: https://code.google.com/p/io-2012-slides
 		parsers. The remainder are helpful.” <br />
 		-jandersen @http://twitter.com/jandersen/ <br /> <br />
 		<ul>
+			<li>Talk about how to create a local HADOOP Environment using Microsoft Technology</li>
 			<li>Copy Some data into the HDFS</li>
-			<li>Execute the code</li>
-			<li>Retrieve the results</li>
+			<li>Execute some code (Using Visual Studio & C#)</li>
+			<li>Count some Words!</li>
 		</ul>
     </article>
 	<aside class="note">
       <section style="font-size: 12pt !important">
+	      (Java Version)
 	   	  mvn clean install <br />
 			target/ <br />
 			hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.WordCount /home/reiszwt/samples/bible/bible+shakes.nopunc /home/reiszwt/samples/bible/output <br />
 			hadoop fs -cat /home/reiszwt/samples/bible/output/part-0* <br />
-	
+		  (.NET Version)	
+
 	  </section>
     </aside>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Installing HDInsight Emulator</h2>
+    </hgroup>
+    <article>
+     	<span class="build">
+	     	<img id="li-image5" src="/images/installHDIE_slide1.png">
+	 		<img id="li-image2" src="/images/installHDIE_slide2.png">
+	 		<img id="li-image4" src="/images/installHDIE_slide3.png">
+			<img id="li-image1" src="/images/hadoop-installed.png">
+			<img id="li-image3" src="/images/cmd.png">
+	    </span>
+    </article>
+  </slide>
+
+  <slide>
+	<hgroup>
+      <h2>Setting Up Visual Studio</h2>
+    </hgroup>
+	<article >
+   		<ul class="build">
+			<li>Startup Visual Studio</li>
+			<li>Create a Console App</li>
+			<li>Using NuGet to add Map Reduce API for .NET</li>
+			<li>Let's See Some Code </li>
+		</ul>
+    </article>
   </slide>
 
   <slide>
@@ -359,7 +407,27 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>WordCount::Map Function</h2>
     </hgroup>
 	    <article class="smaller">
-	      <pre class="prettyprint" data-lang="java">
+		  <center>
+		  	<button class="swapJava">Toggle C#/Java</button>
+		  </center>
+		  <pre class="prettyprint swapCode" data-lang="c#">
+  public class WordCountMapper : MapperBase
+  {
+      private static int one = 1;
+      public override void Map(string inputLine, MapperContext context)
+      {
+          string[] words = inputLine.Split(' ');
+          foreach (String word in words) {
+              if (word.Length>1) {
+                  //outputs each word into a single line with the number 1
+                  //skip spaces
+                  context.EmitKeyValue(word, one.ToString());
+              }
+          }
+      }
+  }		
+		  </pre>
+		  <pre class="prettyprint swapCode" style="display: none" data-lang="java">
   public static class Map extends MapReduceBase 
    	implements Mapper<LongWritable, Text, Text, IntWritable> {
      private final static IntWritable one = new IntWritable(1);
@@ -375,7 +443,7 @@ URL: https://code.google.com/p/io-2012-slides
        }
      }
    }		
-		  </pre>
+		</pre>
 	    </article>
 	    <article>
 			<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
@@ -399,7 +467,25 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>WordCount::Reduce Function</h2>
     </hgroup>
 	    <article class="smaller">
-	      <pre class="prettyprint" data-lang="java">
+			<center>
+			  	<button class="swapJava">Toggle C#/Java</button>
+			</center>
+			<pre class="prettyprint swapCode" data-lang="c#">
+    public class WordCountReducer : ReducerCombinerBase
+    {
+        public override void Reduce(string key, IEnumerable<string> values, ReducerCombinerContext context)
+        {
+            //sum all the ones
+           int sum = 0;
+           foreach(String value in values)
+           {
+              sum += int.Parse(value);
+           }
+           context.EmitKeyValue(key, sum.ToString());
+        }
+    }		
+			  </pre>
+	      <pre class="prettyprint swapCode" style="display: none" data-lang="java">
     public static class Reduce extends MapReduceBase 
     	implements Reducer<Text, IntWritable, Text, IntWritable> {
       public void reduce(Text key, Iterator<IntWritable> values, 
@@ -434,7 +520,29 @@ URL: https://code.google.com/p/io-2012-slides
       <h2>WordCount::Driver</h2>
     </hgroup>
 	    <article class="smaller">
-	      <pre class="prettyprint" data-lang="java">
+	      	  <center>
+			  	<button class="swapJava">Toggle C#/Java</button>
+			  </center>
+			  <pre class="prettyprint swapCode" data-lang="c#">
+	public class WordCountjob : HadoopJob<WordCountMapper, WordCountReducer>
+	{
+	    public override HadoopJobConfiguration Configure(ExecutorContext context)
+	    {
+	        HadoopJobConfiguration config = new HadoopJobConfiguration();
+	        config.InputPath = "Input/wordcount";
+	        config.OutputFolder = "Output/wordcount";
+	        return config;
+	    }
+	}
+	static void Main(string[] args)
+	{
+	    var hadoop = Hadoop.Connect();
+	    var result = hadoop.MapReduceJob.ExecuteJob<WordCountjob>();
+
+	    Console.In.Read();
+	}		
+			  </pre>
+			  <pre class="prettyprint swapCode" style="display: none" data-lang="java">
     public static void main(String[] args) throws Exception {
        JobConf conf = new JobConf(WordCount.class);
        conf.setJobName("wordcount");
@@ -465,7 +573,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Compile and Run It</h2>
+      <h2>Compile and Run It (Java)</h2>
     </hgroup>
 	    <article class="smaller">
 	      <pre class="prettyprint" data-lang="xml">		
@@ -491,19 +599,19 @@ hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.Wor
 	</article>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/demo.png)">
+  <slide class="fill nobackground" style="background-image: url(images/runit_sml.png)">
+    <hgroup>
+      <h2 class="italics" style="text-shadow: 1px 1px 1px #000;">Compile and Run it (C#)</h2>
+    </hgroup>
+  </slide>
+
+
+ <slide class="fill nobackground" style="background-image: url(images/demo.png)">
     <hgroup>
       <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
     </hgroup>
-	<aside class="note">
-      <section style="font-size: 12pt !important">
-		mvn clean install <br />
-		export target/ <br />
-		hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.WordCount 
-			/home/reiszwt/samples/bible/bible+shakes.nopunc /home/reiszwt/samples/bible/output<br />
-	  </section>
-    </aside>
   </slide>
+
 
   <slide class="fill nobackground" style="background-image: url(images/scarecrow.jpg)">
     <hgroup>
@@ -535,40 +643,27 @@ hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.Wor
     </aside>
   </slide>
 
- <slide class="fill nobackground" style="background-image: url(images/demo.png)">
-    <hgroup>
-      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
-    </hgroup>
-	<aside class="note">
-      <section style="font-size: 12pt !important">
-	     show project in eclipse<br />
-	     show maven dependencies<br />
-	     show testcases<br />
-	     build it<br />
-		 debug locally<br />
-	  	 hadoop fs -conf=../conf/hadoop-localhost.xml -ls /home/reiszwt/ncdc/in/
-	     hadoop fs -conf=../conf/hadoop-localhost.xml -rm -r /home/reiszwt/ncdc/out/
-	     hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver -conf=../conf/hadoop-localhost.xml /home/reiszwt/ncdc/in/ /home/reiszwt/ncdc/out/
-	  </section>
-    </aside>
-  </slide>
-
   <slide>
 	<hgroup>
-      <h2>Demo Steps</h2>
+      <h2>Steps</h2>
     </hgroup>
 	<article>
-   	<pre class="prettyprint" data-lang="bash">	
-show project in eclipse
-show maven dependencies
-show testcases
-build it
-debug locally
-hadoop fs -conf=../conf/hadoop-localhost.xml -ls /home/reiszwt/ncdc/in/
-hadoop fs -conf=../conf/hadoop-localhost.xml -rm -r /home/reiszwt/ncdc/out/
-hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver 
-  -conf=../conf/hadoop-localhost.xml /home/reiszwt/ncdc/in/ 
-  /home/reiszwt/ncdc/out/
+   	<pre >	
+show project in eclipse/visual studio
+discuss maven/nuget dependencies
+discuss testcases
+build it & debug locally
+  hadoop fs -ls Input/ncdc
+  hadoop fs -rmr Input/ncdc
+create an Azure HDInsight Instance
+populate data into HDInsight
+  hadoop fs -conf=hdinsight-cluster.xml -ls Input/test
+run from Azure HDInsight
+(Java Way)
+  hadoop jar target/hadoop-examples.jar 
+    com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver 
+    -conf=../conf/hadoop-localhost.xml Input/ncdc/
+    Output/ncdc/
 	</pre>
     </article>
  <article>
@@ -576,6 +671,46 @@ hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTe
 	</article>
   </slide>
 
+  <slide>
+	<hgroup>
+      <h2>Steps</h2>
+    </hgroup>
+	<article>
+   	<pre >	
+(.NET Way)
+      http://www.windowsazure.com/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
+
+      first make sure the old output is removed:
+      hadoop fs -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\hadoop-cluster.xml -rmr Output/ncdc
+
+      hadoop jar lib\hadoop-streaming.jar -input "Input/ncdc" -output "Output/ncdc"  -mapper "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe" -reducer "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"  -file "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"
+	</pre>
+    </article>
+ <article>
+		<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	</article>
+  </slide>
+
+ <slide>
+	<hgroup>
+      <h2>HD Insight on Microsoft Azure</h2>
+    </hgroup>
+	<article >
+		<article>
+			<center>
+			  	<button class="swapJava">Toggle</button>
+			<div class="swapCode">
+					<img src="images/MicrosoftHadoop.png">
+				</div>
+				<div class="swapCode" style="display: none" d>	
+					<img src="images/hdinsight.png">
+				</div>	
+			</center>
+	    </article>
+    </article>
+  </slide>
+
+<!--
   <slide class="fill nobackground" style="background-image: url(images/hpcloud.png)">
     <hgroup>
       <h2 class="black italics" style="text-shadow: 1px 1px 1px #000;">Build a Remote Server with Cloud Technology</h2>
@@ -672,12 +807,6 @@ hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTe
     </article>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/demo.png)">
-    <hgroup>
-      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
-    </hgroup>
-  </slide>
-
   <slide>
 	<hgroup>
       <h2>Great Video on the Install Process for a Cloudera Cluster</h2>
@@ -708,6 +837,13 @@ hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTe
 	    </article>
     </article>
   </slide>
+-->
+
+<slide class="fill nobackground" style="background-image: url(images/demo.png)">
+   <hgroup>
+     <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
+   </hgroup>
+ </slide>
 
   <slide class="fill nobackground" style="background-image: url(images/lion1.jpg)">
     <hgroup>
@@ -721,7 +857,7 @@ hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTe
     </hgroup>
 	<article >
 		<ul>
-			<li>Java/C</li>
+			<li>Java/C/C#</li>
 			<li>Pig</li>
 			<li>Hive</li>
 		</ul>
@@ -770,16 +906,18 @@ hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTe
       <h2>Let's Take a Look at Pig</h2>
     </hgroup>
 	<article >
-		<pre class="prettyprint" data-lang="bash">
-cd /home/cloudera/workspace/lionsAndTigersAndPigOhhMy
-pig
+		<pre class="prettyprint" data-lang="shell">
+c:\Hadoop\hadoop-1.1.0-SNAPSHOT>pig
+2013-11-20 21:46:25,949 [main] INFO  org.apache.pig.backend.hadoop.executionengi
+ne.HExecutionEngine - Connecting to map-reduce job tracker at: localhost:50300
+grunt>
 		</pre>
 		<pre class="prettyprint" data-lang="pig latin">
-records= LOAD '/home/reiszwt/ncdc/sample/sample.txt' AS (year:chararray, temperature:int, quality:int);
+records= LOAD '/user/Wes/Input/sample/sample.txt' AS (year:chararray, temperature:int, quality:int);
 filtered_records =  FILTER records  By temperature !=9999 AND quality==1;
 grouped_recrds = GROUP filtered_records by year;
 max_temp = FOREACH grouped_recrds GENERATE group, MAX(filtered_records.temperature);
-dump max_temp;
+dump max_temp;			
 		</pre>
 		<img src="/images/pig_open.png">
     </article>
@@ -824,11 +962,10 @@ dump max_temp;
     </hgroup>
 	<article >
 		<pre class="prettyprint" data-lang="bash">
-cd /home/cloudera/workspace/lionsAndTigersAndPigOhhMy
 hive
 		</pre>
 		<pre class="prettyprint" data-lang="hive">
-LOAD DATA LOCAL INPATH 'input/ncdc/micro-tab/sample.txt' OVERWRITE INTO Table records;
+LOAD DATA LOCAL INPATH 'Input/ncdc/micro-tab/sample.txt' OVERWRITE INTO Table records;
 select  year, MAX(temperature) FROM records where temperature != 9999 and quality==1 group by year;
 		</pre>
 		<article style="position:absolute; right: 20px; bottom: 20px;"><img src="/images/hiveSml.png" /></article>
@@ -850,22 +987,26 @@ select  year, MAX(temperature) FROM records where temperature != 9999 and qualit
       <h2>Hadoop is a massive</h2>
     </hgroup>
 	<article >
-		Hadoop is a massive ecosystem and I only touched on the surface of the coding. Other things, hadoop offers include:<br /><br /><br />
-		
-		<center><img src="/images/ecosystem.jpg"></center>
-    </article>
-	<aside class="note">
-      <section style="font-size: 12pt !important">
-	  </section>
-    </aside>
+			<center>
+			  	<button class="swapJava">Toggle Cloudera/HDInsight</button><br /><br />
+			  </center>
+			  <div class="swapCode" data-lang="c#">
+					<center><img src="/images/hdinsightEcosystem.jpg"></center>
+			  </div>
+			   <div class="swapCode" style="display: none" data-lang="java">
+   					<center><img src="/images/ecosystem.jpg"></center>
+			  </pre>			
+		  </pre>
+	</article>
   </slide>
 
   <slide>
 	<hgroup>
-      <h2>There are also SAAS Solutions using Hadoop</h2>
+      <h2>There are also other SAAS Solutions using Hadoop</h2>
     </hgroup>
 	<article >
 		<ul>
+			Amazon
 			<li>EC2 has both IAAS and SAAS</li>
 			<li>S3 is an HDFS Filesystem</li>
 		</ul>
@@ -885,9 +1026,10 @@ select  year, MAX(temperature) FROM records where temperature != 9999 and qualit
 			<ul>
 				<li>Hadoop Ecosystem is Huge</li>
 				<li>Support multiple ways to get and work with data, depending on your needs and skills</li>
-				<li>Is Open Source!!!</li>
-				<li>Based on Java</li>
-				<li>Microsoft has a limited access program that allows .NET to access an HDFS</li>
+				<li>Is Based in Open Source!!!</li>
+				<li>Based on Java, but can be used in .NET!</li>
+				<li>Documentation is weak still...</li>
+				<li>Limited testing frameworks that I found</li>
 				<li>Multitude of options from local machines to IAAS and SAAS offerings</li>
 			</ul>
     </article>
@@ -944,7 +1086,7 @@ select  year, MAX(temperature) FROM records where temperature != 9999 and qualit
     </article>
   </slide>
 
-  <slide>
+<slide>
 	<hgroup>
       <h2>Agenda</h2>
     </hgroup>
@@ -953,8 +1095,9 @@ select  year, MAX(temperature) FROM records where temperature != 9999 and qualit
 			<li>Setup the Problem Space</li>
 			<li>Define HADOOP and it's core Technologies</li>
 			<li>Demo/Discuss Wordcount</li>
-			<li>Demonstrate Building a Hadoop Cluster on a Public Cloud Provider</li>
-			<li>Demo/Discuss MaxTemperature in Java</li>
+			<li>Demonstrate Running Locally using HDInsight Emulator for Microsoft Azure </li>
+			<li>Demonstrate Setting up a Hadoop Cluster on Windows Azure HDInsight</li>
+			<li>Demo/Discuss MaxTemperature in Java / C#</li>
 			<li>Demo/Discuss MaxTemperature in Pig Latin</li>
 			<li>Demo/Discuss MaxTemperature in Hive</li>
 			<li>Wrapup</li>
@@ -974,7 +1117,7 @@ select  year, MAX(temperature) FROM records where temperature != 9999 and qualit
 
 <!-- end of the deck -->
   <slide class="thank-you-slide dark nobackground">
-    <aside class="gdbar right"><img src="images/mossLogo.png" style="height:40px; padding-top:20px;"></aside>
+    <aside class="gdbar right"><img src="images/dogFoodLogo.png"></aside>
     <article class="flexbox vleft auto-fadein">
       <h2>Thank You!</h2>
 	  <p>Wesley Reisz</p>
@@ -989,6 +1132,7 @@ select  year, MAX(temperature) FROM records where temperature != 9999 and qualit
     <article class="flexbox vcenter">
      	 <span><img src="images/logoWes.png" /></span>
     </article>
+	
   </slide>
 
   <slide class="backdrop"></slide>
