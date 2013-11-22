@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaxTemperatureMapper
 {
-    class Program
+    public class Program
     {
         public class MaxTemperatureMapper : MapperBase
         {

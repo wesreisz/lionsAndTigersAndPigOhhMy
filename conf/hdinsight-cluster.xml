@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<configuration>
+	<property>
+		<name>fs.default.name</name>
+		<value>hdfs://dogfood13.azurehdinsight.net:8020</value>
+	</property>
+	<property>
+		<name>mapred.job.tracker</name>
+		<value>jobtracker:8021</value>
+	</property>
+	<property>
+		<name>ipc.client.connect.max.retries</name>
+		<value>1</value>
+	</property>
+</configuration>
