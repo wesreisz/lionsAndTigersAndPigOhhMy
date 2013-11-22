@@ -683,7 +683,9 @@ run from Azure HDInsight
       first make sure the old output is removed:
       hadoop fs -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\hadoop-cluster.xml -rmr Output/ncdc
 
-      hadoop jar lib\hadoop-streaming.jar -input "Input/ncdc" -output "Output/ncdc"  -mapper "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe" -reducer "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"  -file "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"
+  	  hadoop jar %HADOOP_HOME%\lib\hadoop-streaming.jar -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\
+	  hadoop-cluster.xml -input "Input/ncdc" -output "Output/ncdc" -file "C:\Users\Wes\projects\
+	  lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"
 	</pre>
     </article>
  <article>
