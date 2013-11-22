@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace MaxTemperatureMapper.Tests
 {
+    /*
+     * Take a look a the following blog to learn more about
+     * how to unit test these jobs
+     * https://github.com/WindowsAzure-Samples/HDInsight-Labs-Preview/blob/master/HandsOnLabs.md#Lab1
+     */
+
     [TestClass]
     public  class MaxTemperatureMapperTest
     {
