@@ -33,7 +33,7 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/dogFoodLogo.png" ></aside>
+    <aside class="gdbar"><img src="images/sml_meetup_logo.png" ></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -43,25 +43,16 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide class="thank-you-slide dark nobackground">
-    <article class="flexbox vleft auto-fadein" style="position: relative; top: -50px" >
-	  <p>Wesley Reisz</p><br />
-  	  <ul>
-			<b>Past:</b>
-			<li>Kick Ass HTML5: <a href="http://reisz-kickass.appspot.com">http://reisz-kickass.appspot.com/</a></li>
-			<li>Deep Dive into HTML5 and CSS3: <a href="http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3">http://www.infoq.com/presentations/Deep-Dive-into-HTML5-and-CSS3</a></li>
-			<li>HTML5 Workshop: <a href="http://reisz-html5.appspot.com/">http://reisz-html5.appspot.com/</a></li>
-			<li>Lions and Tigers and Pig Ohh My... (Java & .NET Editions): <a href="http://reisz-ltpom.appspot.com/">http://reisz-ltpom.appspot.com/</a>
-					(CodePaLOUsa, Stir Trek, MOSSCon, DogFoodCon)</li>
-			<li>Fall 2013 Android Programming (UofL COB)</li>
-			<br />
-			<b>Upcoming:</b>
-			<li>Spring 2013 Web Architecture (UofL COB)</li>
-	  </ul>
-		<p class="auto-fadein" style="position: relative; top: -60px" data-config-contact>
+    <article class="flexbox vleft auto-fadein">
+	  <center>
+  	  <img src="/images/personal-cloud.png" width="90%" style="border:1px solid black;">
+	   </center><br />
+
+	  <p class="auto-fadein" style="position: relative; top: -60px" data-config-contact>
 	      <!-- populated from slide_config.json -->
-	    </p>
+	  </p>
+	 
     </article>
-    
   </slide>
 
   <slide>
@@ -90,15 +81,13 @@ URL: https://code.google.com/p/io-2012-slides
     </hgroup>
     <article>
       <div style="position: absolute; top: 20px; right:60px;text-align:right;width:60%">
-		<span class="italics">“Big data” is high-volume, -velocity and -variety information assets that demand cost-effective, innovative forms of information processing for enhanced insight and decision making."</span>
-	    <span id="bigDataDef" class="small source black">Source: Gartner, Inc. Hype Cycle for Emerging Technologies, 2012 H. LeHong, J. Fenn July 31, 2012.</span>
+		<span class="italics">Big data is the term for a collection of data sets so large and complex that it becomes difficult to process using on-hand database management tools or traditional data processing applications... The trend to larger data sets is due to the additional information derivable from analysis of a single large set of related data, as compared to separate smaller sets with the same total amount of data, allowing correlations to be found to "spot business trends, determine quality of research, prevent diseases, link legal citations, combat crime, and determine real-time roadway traffic conditions.</span>
 	  </div>
 	 
 	  <ul class="build" style="padding-top:100px">
 		<li>Volume</li>
 		<li>Velocity</li>
 		<li>Variety</li>
-		<li>Value</li>	
 		<img id="arrow" src="images/arrow-vector-sml.png">
 		<img id="vs" src="images/BigData-4Vs.png">
 	  </ul>	
@@ -129,21 +118,44 @@ URL: https://code.google.com/p/io-2012-slides
   </slide>
 
   <slide>
+    <article>
+	    <section style="float:left">
+	    <img src="/images/sml-landscape-of-big-data.png" width="90%">
+		</section>
+	   	<section>
+			<b>2014 Graphic</b><br/><br/>
+	        <ul>
+				<li>72 Hours are added to YouTube every Hour</li>
+				<li>92% of the worlds data was created in the last two years</li>
+				<li>30+ Billion pieces of data are added to facebook every month</li>
+			</ul>
+		</section>	
+			<footer class="source" style="position:absolute; bottom:10px">http://www.huffingtonpost.com/jim-yu/big-data-vs-relevant-data_b_5022792.html</footer>		
+    </article>  
+  </slide>
+
+  <slide>
 	<hgroup>
-      <h2>By Comparison, recent 2013 (various sources):</h2>
+      <h2>Big Data Problems: </h2>
     </hgroup>
     <article>
-     	<ul class="build">
-			<li>Stats:</li>
-	     	<ul>
-				<li>We upload 72 hrs of Youtube video every minute today, that's up from 20 hrs last year (http://www.youtube.com/yt/press/statistics.html)</li>
-				<li>Twitter just surpassed 400 million tweets per day (up from 50 million) (http://news.cnet.com/8301-1023_3-57448388-93/twitter-hits-400-million-tweets-per-day-mostly-mobile/)</li>
-				<li>Facebook ingests 500TB daily of new content!</li>
-				<li>Last Cyber Monday, Amazon set a new record of 306 items sold per second (http://www.businessinsider.com/amazon-holiday-facts-2012-12)
-			</ul>
-			<li>“We're Investing $1 Billion In Big Data This Year.” HP Software chief George Kadifa (March 2013)</li>
+    	<ul>
+	       <li>The Large Hadron Collider experiments represent about 150 million sensors delivering data 40 million times per second. There are nearly 600 million collisions per second. After filtering and refraining from recording more than 99.999% of these streams, there are 100 collisions of interest per second.</li>
+		   <li>	eBay.com uses two data warehouses at 7.5 petabytes and 40PB as well as a 40PB Hadoop cluster for search, consumer recommendations, and merchandising. Inside eBay’s 90PB data warehouse	</li>
+			<li>
+			Amazon.com handles millions of back-end operations every day, as well as queries from more than half a million third-party sellers. The core technology that keeps Amazon running is Linux-based and as of 2005 they had the world’s three largest Linux databases, with capacities of 7.8 TB, 18.5 TB, and 24.7 TB.</li>
+			<li>
+			Walmart handles more than 1 million customer transactions every hour, which are imported into databases estimated to contain more than 2.5 petabytes (2560 terabytes) of data – the equivalent of 167 times the information contained in all the books in the US Library of Congress.</li>
+			<li>
+			Facebook handles 50 billion photos from its user base.</li>
 	    </ul>
+		<footer class="source" style="position:absolute; bottom:10px">http://en.wikipedia.org/wiki/Big_data</footer>		
+</article>
     </article>
+    <aside class="note">
+      <section style="font-size: 12pt !important">
+      </section>  
+    </aside>
   </slide>
  
   <slide class="fill nobackground" style="background-image: url(/images/the_wizard_of_oz.jpg)">
@@ -220,10 +232,8 @@ URL: https://code.google.com/p/io-2012-slides
     </aside>
   </slide>
 
- <slide class="fill nobackground" style="background-image: url(/images/hdfsarchitecture.png)">
-    <hgroup>
-      <h2 class="black italics" style="text-shadow: 1px 1px 1px #000;">"HDFS Architecture"</h2>
-    </hgroup>
+  <slide class="fill nobackground" style="background-image: url(/images/hadoop_arch.png)">
+	<footer class="source" style="position:absolute; bottom:10px"><a class="blue" href="http://bigdata.globant.com/wp-content/uploads/2012/05/hadoop_hdfs1.png">http://bigdata.globant.com/wp-content/uploads/2012/05/hadoop_hdfs1.png</a></footer>
   </slide>
 
 
@@ -231,7 +241,7 @@ URL: https://code.google.com/p/io-2012-slides
 	<hgroup>
       <h2>HDFS Features</h2>
     </hgroup>
-	<article class="smaller build">
+	<article class="build">
 		<ul>
 			<li>Designed to store large files</li> 
 			<li>Fault tolerant and self-healing distributed file system</li>
@@ -678,14 +688,16 @@ run from Azure HDInsight
 	<article>
    	<pre >	
 (.NET Way)
-      http://www.windowsazure.com/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
+    http://www.windowsazure.com/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
 
-      first make sure the old output is removed:
-      hadoop fs -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\hadoop-cluster.xml -rmr Output/ncdc
+    first make sure the old output is removed:
+    hadoop fs -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\hadoop-cluster.xml -rmr Output/ncdc
 
-  	  hadoop jar %HADOOP_HOME%\lib\hadoop-streaming.jar -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\
-	  hadoop-cluster.xml -input "Input/ncdc" -output "Output/ncdc" -file "C:\Users\Wes\projects\
-	  lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"
+    hadoop jar %HADOOP_HOME%\lib\hadoop-streaming.jar 
+      -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\hadoop-cluster.xml 
+      -input "Input/ncdc" 
+      -output "Output/ncdc" 
+      -file "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"
 	</pre>
     </article>
  <article>

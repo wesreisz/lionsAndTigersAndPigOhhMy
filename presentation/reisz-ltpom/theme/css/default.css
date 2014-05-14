@@ -265,7 +265,7 @@ slides>slide.far-next { display: none }
 slides>slide.dark { background: #515151 !important }
 slides>slide:not(.nobackground):before {
     font-size: 12pt;
-    content: "#dogfood13 @wesreisz";
+    content: "@wesreisz";
     position: absolute;
     bottom: 20px;
     left: 60px;
@@ -1102,7 +1102,7 @@ aside.gdbar img {
 }
 #vs{
 	position: absolute; 
-	top:160px; 
+	top:180px; 
 	right:50px;
 }
 #hadoopDef{
