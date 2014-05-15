@@ -59,9 +59,22 @@ namespace WordCount
                 return config;
             }
         }
+
+        static IHadoop connect2Azure()
+        {
+            return Hadoop.Connect(
+                new Uri("https://reiszeast.azurehdinsight.net:563"), "admin", "N0password",
+                "reiszeast", "http://reiszeast.blob.core.windows.net/sample",
+                "3d0bab5b-fb65-456e-88d1-ed692a127391",
+                "sample",
+                true
+            );
+        }
+
         static void Main(string[] args)
         {
-            var hadoop = Hadoop.Connect();
+            //var hadoop = Hadoop.Connect();
+            var hadoop = connect2Azure();
             var result = hadoop.MapReduceJob.ExecuteJob<WordCountjob>();
             
             Console.In.Read();
