@@ -53,9 +53,20 @@ namespace WordCount
         {
             public override HadoopJobConfiguration Configure(ExecutorContext context)
             {
+                return localConfig();
+                //return azureConfig();
+            }
+            static HadoopJobConfiguration localConfig(){
                 HadoopJobConfiguration config = new HadoopJobConfiguration();
-                config.InputPath = "Input/wordcount";
-                config.OutputFolder = "Output/wordcount";
+                config.InputPath = "input/wordcount";
+                config.OutputFolder = "output/wordcount";
+                return config;
+            }
+            static HadoopJobConfiguration azureConfig()
+            {
+                HadoopJobConfiguration config = new HadoopJobConfiguration();
+                config.InputPath = "asv://working@reiszeast1.blob.core.windows.net/input/wordcount";
+                config.OutputFolder = "asv://working@reiszeast1.blob.core.windows.net/output/wordcount";
                 return config;
             }
         }
@@ -63,18 +74,19 @@ namespace WordCount
         static IHadoop connect2Azure()
         {
             return Hadoop.Connect(
-                new Uri("https://reiszeast.azurehdinsight.net:563"), "admin", "N0password",
-                "reiszeast", "http://reiszeast.blob.core.windows.net/sample",
-                "3d0bab5b-fb65-456e-88d1-ed692a127391",
-                "sample",
+                new Uri("https://reiszeast.azurehdinsight.net"),
+                "admin", "hadoop", "Password!2",
+                "reiszeast1.blob.core.windows.net",
+                "T78PCkv/3zvCcGASIEE9h9yzdUumRrnZZm5A8SAIVocn/W11WkwJ9JXKRU3RF7TT+3KfecMy4NDV1Ddfk4OCkg==",
+                "working",
                 true
             );
         }
 
         static void Main(string[] args)
         {
-            //var hadoop = Hadoop.Connect();
-            var hadoop = connect2Azure();
+            var hadoop = Hadoop.Connect();
+            //var hadoop = connect2Azure();
             var result = hadoop.MapReduceJob.ExecuteJob<WordCountjob>();
             
             Console.In.Read();
