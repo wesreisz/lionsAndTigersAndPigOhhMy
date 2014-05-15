@@ -342,7 +342,7 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
 	<hgroup>
-      <h2>Putting it All Together With Hadoop's Version of Hello World'</h2>
+      <h2>Putting it All Together With Hadoop's Version of Hello World</h2>
     </hgroup>
 	<article >
    		“45% of all Hadoop tutorials count words. 25% count 
@@ -410,7 +410,7 @@ URL: https://code.google.com/p/io-2012-slides
    		<ul class="build">
 			<li>Startup Visual Studio</li>
 			<li>Create a Console App</li>
-			<li>Using NuGet to add Map Reduce API for .NET</li>
+			<li>Use NuGet to add Microsoft .NET API for Hadoop, Map Reduce API for Hadoop, & Hadoop Web Client</li>
 			<li>Let's See Some Code </li>
 		</ul>
     </article>
@@ -693,12 +693,13 @@ run from Azure HDInsight
    	<pre >	
 (.NET Way)
     http://www.windowsazure.com/en-us/manage/services/hdinsight/submit-hadoop-jobs-programmatically/
-
+    configure core-site.xml for azure (when needed)
     first make sure the old output is removed:
-    hadoop fs -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\hadoop-cluster.xml -rmr Output/ncdc
+    
+    hadoop fs -rmr Output/ncdc
 
     hadoop jar %HADOOP_HOME%\lib\hadoop-streaming.jar 
-      -conf=\Users\Wes\projects\lionsAndTigersAndPigOhhMy\conf\hadoop-cluster.xml 
+      -conf={path to core-site.xml}
       -input "Input/ncdc" 
       -output "Output/ncdc" 
       -file "C:\Users\Wes\projects\lionsAndTigersAndPigOhhMy\dotnet\MaxTemperatureMapper\bin\Debug\MaxTemperatureMapper.exe"
