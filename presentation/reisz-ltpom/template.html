@@ -340,21 +340,7 @@ URL: https://code.google.com/p/io-2012-slides
     </article>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/demo.png)">
-    <hgroup>
-      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
-    </hgroup>
-	<aside class="note">
-      <section style="font-size: 12pt !important">
-	     1149  sudo find / -name "hadoop-examples*jar"<br />
-		 1150  export HADOOP_CLASSPATH=/usr/lib/hadoop-0.20-mapreduce/<br />
-		 1151  echo $HADOOP_CLASSPATH<br />
-		 1152  hadoop jar hadoop-examples.jar pi 2 100<br />
-	  </section>
-    </aside>
-  </slide>
-
- <slide>
+  <slide>
 	<hgroup>
       <h2>Putting it All Together With Hadoop's Version of Hello World'</h2>
     </hgroup>
@@ -377,8 +363,26 @@ URL: https://code.google.com/p/io-2012-slides
 			target/ <br />
 			hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.WordCount /home/reiszwt/samples/bible/bible+shakes.nopunc /home/reiszwt/samples/bible/output <br />
 			hadoop fs -cat /home/reiszwt/samples/bible/output/part-0* <br />
-		  (.NET Version)	
+		  (.NET Version)
+		    run in VS
+			hadoop fs -get Output/wordcount/part* .
+            linux: sort -k2 -n part-00000
+            ps: Get-Content .\file.txt | Sort-Object { [double]$_.split()[-1] } -Descending
+	  </section>
+    </aside>
+  </slide>
 
+
+  <slide class="fill nobackground" style="background-image: url(images/demo.png)">
+    <hgroup>
+      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
+    </hgroup>
+	<aside class="note">
+      <section style="font-size: 12pt !important">
+	     1149  sudo find / -name "hadoop-examples*jar"<br />
+		 1150  export HADOOP_CLASSPATH=/usr/lib/hadoop-0.20-mapreduce/<br />
+		 1151  echo $HADOOP_CLASSPATH<br />
+		 1152  hadoop jar hadoop-examples.jar pi 2 100<br />
 	  </section>
     </aside>
   </slide>
