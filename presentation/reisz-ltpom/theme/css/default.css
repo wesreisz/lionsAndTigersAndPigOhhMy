@@ -1051,9 +1051,9 @@ aside.gdbar img {
 	position: absolute; 
 	top:50px; 
 	left:400px;  
-	transform:rotate(35deg);
-	-ms-transform:rotate(35deg);
-	-webkit-transform:rotate(35deg);
+	transform:rotate(15deg);
+	-ms-transform:rotate(15deg);
+	-webkit-transform:rotate(15deg);
 }
 #li-image2{
 	position: absolute; 
@@ -1092,17 +1092,30 @@ aside.gdbar img {
 	-ms-transform:rotate(-23deg);
 	-webkit-transform:rotate(-23deg)
 }
+#li-image7{
+	position: absolute; 
+	top:50px; 
+	left:50px;  
+	transform:rotate(15deg);
+	-ms-transform:rotate(15deg);
+	-webkit-transform:rotate(15deg)
+}
+#li-image8{
+	position: absolute; 
+	top:150px; 
+	left:300px;
+}
 #arrow{
 	position: absolute; 
-	top:200px; 
-	left:250px;
+	top:60px; 
+	left:300px;
 	transform:rotate(8deg);
 	-ms-transform:rotate(8deg);
 	-webkit-transform:rotate(8deg)
 }
 #vs{
 	position: absolute; 
-	top:180px; 
+	top:20px; 
 	right:50px;
 }
 #hadoopDef{

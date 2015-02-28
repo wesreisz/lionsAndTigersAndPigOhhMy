@@ -2,7 +2,7 @@ var SLIDE_CONFIG = {
   // Slide settings
   settings: {
     title: 'Lions and Tigers and Pig Ohh My...',
-    subtitle: 'A Coders Introduction to Big Data (.NET Edition)',
+    subtitle: 'A Coder\'s Introduction to Big Data',
     useBuilds: true, // Default: true. False will turn off slide animation builds.
     usePrettify: true, // Default: true
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -19,7 +19,6 @@ var SLIDE_CONFIG = {
   // Author information
   presenters: [{
     name: 'Wesley Reisz<br /> @wesreisz',
-    company: 'Enterprise Design Lead <br />HP Enterprise Services<br /><a class="blue" href="http://www.wesleyreisz.com">www.wesleyreisz.com</a>',
     github: 'https://github.com/wesreisz/lionsAndTigersAndPigOhhMy',
     twitter: '@wesreisz',
     email: 'wes@wesleyreisz.com',
