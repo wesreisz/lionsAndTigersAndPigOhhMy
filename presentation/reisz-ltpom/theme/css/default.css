@@ -762,7 +762,7 @@ article.smaller q:after { font-size: 60px }
 .with-notes.popup slide.next .note { display: none !important }
 .with-notes.popup .note {
     width: 109%;
-    height: 260px;
+    height: 100%;
     background: #e6e6e6;
     padding: 0;
     -webkit-box-shadow: 0 0 10px #797979;
