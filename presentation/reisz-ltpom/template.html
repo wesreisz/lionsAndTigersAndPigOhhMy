@@ -685,7 +685,7 @@ hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.Wor
    		<p>Purpose: Write a Program to Grab the Highest Temperatures over a large volume of Datasets from NCDC</p>
 		<p>In the process, we will:</p>
 		<ul>
-			<li>Write <b>AND TEST</b> our code using the local file system</li>
+			<li>Write <b>AND TEST</b> our code using the local server</li>
 			<!--
 			<li>Copy data into the remote hdfs cluster and execute it</li>
 			-->
@@ -712,15 +712,9 @@ discuss testcases
 build it & debug locally
   hadoop fs -ls Input/ncdc
   hadoop fs -rmr Input/ncdc
-create an Azure HDInsight Instance
-populate data into HDInsight
-  hadoop fs -conf=hdinsight-cluster.xml -ls Input/test
-run from Azure HDInsight
-(Java Way)
-  hadoop jar target/hadoop-examples.jar 
-    com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver 
-    -conf=../conf/hadoop-localhost.xml Input/ncdc/
-    Output/ncdc/
+(Run it)
+  hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver 
+	/user/cloudera/ncdc/input /user/cloudera/ncdc/output
 	</pre>
     </article>
  <article>
