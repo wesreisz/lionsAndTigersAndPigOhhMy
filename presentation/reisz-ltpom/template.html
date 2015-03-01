@@ -706,15 +706,15 @@ hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.Wor
     </hgroup>
 	<article>
    	<pre >	
-show project in eclipse/visual studio
+show project in IntelliJ/visual studio
 discuss maven/nuget dependencies
 discuss testcases
-build it & debug locally
-  hadoop fs -ls Input/ncdc
-  hadoop fs -rmr Input/ncdc
-(Run it)
-  hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver 
-	/user/cloudera/ncdc/input /user/cloudera/ncdc/output
+build it & test locally
+build it & run local
+hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver --conf ../../conf/hadoop-local.xml ../../input/ncdc/all output
+bulld it & run localhost
+hadoop jar target/hadoop-examples.jar com.wesleyreisz.lionsAndTigersAndPig.MaxTemperatureDriver --conf ../../conf/hadoop-localhost.xml  /user/cloudera/ncdc/input  /user/cloudera/ncdc/output
+
 	</pre>
     </article>
  <article>
