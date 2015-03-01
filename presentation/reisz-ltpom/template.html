@@ -694,6 +694,37 @@ hadoop jar WordCount-0.0.1-SNAPSHOT.jar com.wesleyreisz.bigdata.wordcount.v1.Wor
 		</ul>
     </article>
   </slide>
+  
+  <slide>
+		<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+	<hgroup>
+      <h2>National Climatic Data Center (NCDC) Weather Station Data</h2>
+    </hgroup>
+	<article >
+   		<pre class="prettyprint" data-lang="text">
+0029029720999991901072213004+60450+022267FM-12+001499999V0200201N001019999999N0000001N9+03171+99999101681ADDGF101991999999999999999999			
+		</pre>	
+	   		<a href="http://www1.ncdc.noaa.gov/pub/data/noaa/ish-format-document.pdf
+	    ">http://www1.ncdc.noaa.gov/pub/data/noaa/ish-format-document.pdf</a>
+		<p>
+		    POS: 88-92<br />
+		    AIR-TEMPERATURE-OBSERVATION air temperature<br />
+		    The temperature of the air.<br />
+		    MIN: -0932 MAX: +0618 UNITS: Degrees Celsius<br />
+		    SCALING FACTOR: 10<br />
+		    DOM: A general domain comprised of the numeric characters (0-9), a plus sign (+), and a minus10
+		    sign (-).<br />
+		    +9999 = Missing<br />
+		</p>
+
+        <pre>
+			//verify data
+			gunzip 1901.gz
+			cat 1901 | cut -c88-92 | sort 
+		</pre>	
+		
+    </article>
+  </slide>
 
   <slide>	<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
 	<hgroup>

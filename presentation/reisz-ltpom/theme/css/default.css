@@ -375,7 +375,6 @@ slides.layout-widescreen #next-slide-area,
 slides.layout-faux-widescreen #next-slide-area { margin-left: 550px }
 b { font-weight: 600 }
 a {
-    color: white;
     text-decoration: none;
 }
 a:hover { color: black !important }

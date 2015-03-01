@@ -46,7 +46,18 @@ public class MaxTemperatureMapperTest {
 
 	@Test
 	public void processesValidRecord3() throws IOException, InterruptedException {
-		Text value = new Text("0029029720999991904010220004+60450+022267FM-12+001499999V0209991C000019999999N0000001N9-01111+99999102961ADDGF100991999999999999999999"); // Temperature
+		Text value = new Text("0029029720999991901072213004+60450+022267FM-12+001499999V0200201N001019999999N0000001N9+03171+99999101681ADDGF101991999999999999999999"); // Temperature
+
+		new MapDriver<LongWritable, Text, Text, IntWritable>()
+				.withMapper(new MaxTemperatureMapper())
+				.withInputValue(value)
+				.withOutput(new Text("1901"), new IntWritable(317))
+				.runTest();
+	}
+
+	@Test
+	public void processesValidRecordReallyHigh() throws IOException, InterruptedException {
+		Text value = new Text(""); // Temperature
 
 		new MapDriver<LongWritable, Text, Text, IntWritable>()
 				.withMapper(new MaxTemperatureMapper())
