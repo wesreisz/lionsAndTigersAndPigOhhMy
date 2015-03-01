@@ -23,6 +23,39 @@ import org.junit.Test;
 
 public class MaxTemperatureMapperTest {
 	@Test
+	public void processesValidRecord1() throws IOException, InterruptedException {
+		Text value = new Text("0029029070999991904010106004+64333+023450FM-12+000599999V0203401N009819999999N0000001N9+00111+99999101741ADDGF100991999999999999999999"); // Temperature
+
+		new MapDriver<LongWritable, Text, Text, IntWritable>()
+				.withMapper(new MaxTemperatureMapper())
+				.withInputValue(value)
+				.withOutput(new Text("1904"), new IntWritable(11))
+				.runTest();
+	}
+
+	@Test
+	public void processesValidRecord2() throws IOException, InterruptedException {
+		Text value = new Text("0029029070999991904010213004+64333+023450FM-12+000599999V0202001N008219999999N0000001N9-00281+99999102631ADDGF108991999999999999999999"); // Temperature
+
+		new MapDriver<LongWritable, Text, Text, IntWritable>()
+				.withMapper(new MaxTemperatureMapper())
+				.withInputValue(value)
+				.withOutput(new Text("1904"), new IntWritable(-28))
+				.runTest();
+	}
+
+	@Test
+	public void processesValidRecord3() throws IOException, InterruptedException {
+		Text value = new Text("0029029720999991904010220004+60450+022267FM-12+001499999V0209991C000019999999N0000001N9-01111+99999102961ADDGF100991999999999999999999"); // Temperature
+
+		new MapDriver<LongWritable, Text, Text, IntWritable>()
+				.withMapper(new MaxTemperatureMapper())
+				.withInputValue(value)
+				.withOutput(new Text("1904"), new IntWritable(-111))
+				.runTest();
+	}
+
+	@Test
 	public void processesValidRecord() throws IOException, InterruptedException {
 		Text value = new Text(
 				"0043011990999991950051518004+68750+023550FM-12+0382" +    // Year
