@@ -401,7 +401,7 @@ URL: https://code.google.com/p/io-2012-slides
 			<br /> cd working/
 			<br /> hadoop fs -get /user/cloudera/bible/output/part* 
 			<br /> cat part-00000 
-			<br /> sort -k2 part-00000 
+			<br /> sort -nk2 part-00000 
 		  <br /> (.NET Version)
 		    <br />run in VS
 			<br />hadoop fs -get Output/wordcount/part* .
@@ -910,6 +910,35 @@ hadoop jar %HADOOP_HOME%\lib\hadoop-streaming.jar
      <h2 class="white italics" style="text-shadow: 1px 1px 1px #000;">Demo</h2>
    </hgroup>
  </slide>
+ 
+ <slide>	<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
+<hgroup>
+     <h2>There are also other SAAS Solutions using Hadoop</h2>
+   </hgroup>
+<article >
+	Amazon
+	<ul>
+		<li>EC2 has both IAAS and SAAS offerings</li>
+		<li>S3 is an HDFS Filesystem... you can read as input anything loaded there and write it back out</li>
+	</ul>
+	Microsoft
+	<ul>
+		<li>Azure has HDInsight</li>
+	</ul>
+	Google
+	<ul>
+		<li>Click to Deploy</li>
+		<li>Uses buckets as storage</li>
+		<li>gcloud compute ssh --zone=<hadoop-master-zone> <hadoop-master> \
+ --ssh-flag="-t" --command="sudo su -l hadoop"</li>
+	</ul>	
+   </article>
+<aside class="note">
+     <section style="font-size: 12pt !important">
+  </section>
+   </aside>
+ </slide>
+ 
 
   <slide class="fill nobackground" style="background-image: url(images/lion1.jpg)">
     <hgroup>
@@ -1065,28 +1094,6 @@ select  year, MAX(temperature) FROM records where temperature != 9999 and qualit
 		  </pre>
 	</article>
   </slide>
-
-  <slide>	<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
-	<hgroup>
-      <h2>There are also other SAAS Solutions using Hadoop</h2>
-    </hgroup>
-	<article >
-		Amazon
-		<ul>
-			<li>EC2 has both IAAS and SAAS offerings</li>
-			<li>S3 is an HDFS Filesystem... you can read as input anything loaded there and write it back out</li>
-		</ul>
-		Microsoft
-		<ul>
-			<li>Azure has HDInsight</li>
-		</ul>	
-    </article>
-	<aside class="note">
-      <section style="font-size: 12pt !important">
-	  </section>
-    </aside>
-  </slide>
-
 
  <slide>	<a href="https://github.com/wesreisz/lionsAndTigersAndPigOhhMy"><img border="0" class="gitfork" src="/images/forkme_right_red_aa0000.png" width="149px" height="149px" /></a>
 	<hgroup>
